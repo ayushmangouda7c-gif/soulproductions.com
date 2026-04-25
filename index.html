@@ -150,43 +150,32 @@
     animation: fadeInUp .8s ease .12s both;
     opacity: 0;
   }
+  /* ======= SVG HERO LOGO — clean static title ======= */
+.hero-svg-wrap {
+  width: min(760px, 92vw);
+  margin: 0 auto 20px;
+  position: relative;
+  animation: fadeInUp 1s ease .22s both;
+  opacity: 0;
+}
 
-  /* ======= SVG HERO LOGO — the main title ======= */
-  .hero-svg-wrap {
-    width: min(680px, 88vw);
-    margin: 0 auto 20px;
-    position: relative;
-    animation: fadeInUp 1s ease .22s both;
-    opacity: 0;
-  }
-  .hero-svg-logo {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* Multi-layer glow to mimic the neon graffiti feel */
-    filter:
-      drop-shadow(0 0 8px rgba(0, 212, 255, 0.9))
-      drop-shadow(0 0 22px rgba(0, 212, 255, 0.55))
-      drop-shadow(0 0 55px rgba(0, 212, 255, 0.28))
-      drop-shadow(0 0 100px rgba(0, 255, 240, 0.15));
-    animation: soulGlow 3.5s ease-in-out infinite;
-  }
-  @keyframes soulGlow {
-    0%,100% {
-      filter:
-        drop-shadow(0 0 8px rgba(0,212,255,0.9))
-        drop-shadow(0 0 22px rgba(0,212,255,0.5))
-        drop-shadow(0 0 55px rgba(0,212,255,0.25))
-        drop-shadow(0 0 100px rgba(0,255,240,0.12));
-    }
-    50% {
-      filter:
-        drop-shadow(0 0 14px rgba(0,212,255,1))
-        drop-shadow(0 0 40px rgba(0,212,255,0.75))
-        drop-shadow(0 0 90px rgba(0,212,255,0.4))
-        drop-shadow(0 0 150px rgba(0,255,240,0.22));
-    }
-  }
+/* remove the pulsing halo */
+.hero-svg-wrap::before {
+  content: none;
+}
+
+.hero-svg-logo,
+.hero-svg-logo.soul-png-title {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  /* clean logo — no glow, no pulse */
+  filter: none;
+  animation: none;
+  mix-blend-mode: normal;
+}
 
   /* Name beneath logo */
   .hero-name {
